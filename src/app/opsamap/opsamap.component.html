@@ -1,0 +1,41 @@
+<!-- <app-loader></app-loader> -->
+
+<div class="row mt-5 d-flex justify-content-center">
+    <h1 class="mt-5 text-center">ยินดีต้อนรับสู่การเลือกตั้งประธานชมรมผู้จัดการ</h1>
+</div>
+<!-- <div *ngIf="voted"> -->
+<div class="row d-flex justify-content-center">
+    <h2 class="text-center">กรุณาลงคะแนน</h2>
+    <div class="row mt-3 d-flex justify-content-center ">
+        <!-- <div class="col-md-4"> -->
+        <form class="form-sample" #f="ngForm" (ngSubmit)="onSubmit()">
+            <!-- <div ngIf='voted'> -->
+            <mat-radio-group name="voted" aria-labelledby="example-radio-group-label" class="example-radio-group"
+                ngModel required>
+                <mat-radio-button class="example-radio-button" style="font-size: large;"
+                    *ngFor="let peaName of peaname2" [value]="peaName[0]">
+                    {{peaName[1]+". "+peaName[0]}}
+                </mat-radio-button>
+            </mat-radio-group>
+            <div class="col-md-12 mt-3">
+                <button type="submit" [disabled]="!f.valid" class="btn btn-success mr-2">Submit</button>
+            </div>
+            <!-- </div> -->
+        </form>
+        <!-- </div> -->
+    </div>
+    <!-- <label id="example-radio-group-label">Pick your favorite season</label> -->
+    <!-- <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="favoriteSeason">
+      <mat-radio-button class="example-radio-button" *ngFor="let peaName of peaname2" [value]="peaName">
+        {{peaName}}
+      </mat-radio-button>
+    </mat-radio-group> -->
+    <!-- <div>Your favorite season is: {{favoriteSeason}}</div> -->
+</div>
+<!-- </div>
+<div *ngIf="voted">
+    <h2 class="text-center">คุณได้ลงคะแนนไปแล้ว</h2>
+</div> -->
